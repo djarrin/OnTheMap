@@ -13,6 +13,13 @@
 		DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F132438E00C007DDDCF /* Main.storyboard */; };
 		DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F162438E00D007DDDCF /* Assets.xcassets */; };
 		DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */; };
+		DDA224A0243A40610046D861 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA2249F243A40610046D861 /* Colors.xcassets */; };
+		DDA224A2243A46100046D861 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A1243A46100046D861 /* Colors.swift */; };
+		DDA224A4243A47A50046D861 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A3243A47A50046D861 /* LoginViewController.swift */; };
+		DDA224A6243A482B0046D861 /* ListingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A5243A482B0046D861 /* ListingMapViewController.swift */; };
+		DDA224A8243A48B90046D861 /* ListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A7243A48B90046D861 /* ListingTableViewController.swift */; };
+		DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A9243A49560046D861 /* AddLocationFormViewController.swift */; };
+		DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224AB243A49920046D861 /* AddLocationMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		DD0E3F162438E00D007DDDCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0E3F192438E00D007DDDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0E3F1B2438E00D007DDDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA2249F243A40610046D861 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DDA224A1243A46100046D861 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DDA224A3243A47A50046D861 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DDA224A5243A482B0046D861 /* ListingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMapViewController.swift; sourceTree = "<group>"; };
+		DDA224A7243A48B90046D861 /* ListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingTableViewController.swift; sourceTree = "<group>"; };
+		DDA224A9243A49560046D861 /* AddLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationFormViewController.swift; sourceTree = "<group>"; };
+		DDA224AB243A49920046D861 /* AddLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,54 @@
 		DD0E3F0C2438E00C007DDDCF /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				DDA2249E243A3F550046D861 /* Model */,
+				DDA2249D243A3F510046D861 /* View */,
+				DDA2249C243A3F4B0046D861 /* Controller */,
+				DDA2249B243A3F450046D861 /* Assets */,
 				DD0E3F0D2438E00C007DDDCF /* AppDelegate.swift */,
 				DD0E3F0F2438E00C007DDDCF /* SceneDelegate.swift */,
-				DD0E3F112438E00C007DDDCF /* ViewController.swift */,
-				DD0E3F132438E00C007DDDCF /* Main.storyboard */,
-				DD0E3F162438E00D007DDDCF /* Assets.xcassets */,
-				DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */,
 				DD0E3F1B2438E00D007DDDCF /* Info.plist */,
 			);
 			path = OnTheMap;
+			sourceTree = "<group>";
+		};
+		DDA2249B243A3F450046D861 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */,
+				DD0E3F132438E00C007DDDCF /* Main.storyboard */,
+				DD0E3F162438E00D007DDDCF /* Assets.xcassets */,
+				DDA2249F243A40610046D861 /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DDA2249C243A3F4B0046D861 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E3F112438E00C007DDDCF /* ViewController.swift */,
+				DDA224A3243A47A50046D861 /* LoginViewController.swift */,
+				DDA224A5243A482B0046D861 /* ListingMapViewController.swift */,
+				DDA224A7243A48B90046D861 /* ListingTableViewController.swift */,
+				DDA224A9243A49560046D861 /* AddLocationFormViewController.swift */,
+				DDA224AB243A49920046D861 /* AddLocationMapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDA2249D243A3F510046D861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA224A1243A46100046D861 /* Colors.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDA2249E243A3F550046D861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */,
+				DDA224A0243A40610046D861 /* Colors.xcassets in Resources */,
 				DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */,
 				DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */,
 			);
@@ -138,8 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA224A8243A48B90046D861 /* ListingTableViewController.swift in Sources */,
 				DD0E3F122438E00C007DDDCF /* ViewController.swift in Sources */,
+				DDA224A2243A46100046D861 /* Colors.swift in Sources */,
+				DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */,
+				DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */,
 				DD0E3F0E2438E00C007DDDCF /* AppDelegate.swift in Sources */,
+				DDA224A4243A47A50046D861 /* LoginViewController.swift in Sources */,
+				DDA224A6243A482B0046D861 /* ListingMapViewController.swift in Sources */,
 				DD0E3F102438E00C007DDDCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
