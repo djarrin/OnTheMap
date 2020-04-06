@@ -12,6 +12,10 @@
 		DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F132438E00C007DDDCF /* Main.storyboard */; };
 		DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F162438E00D007DDDCF /* Assets.xcassets */; };
 		DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */; };
+		DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BA243B49B1009B89C9 /* ListingModel.swift */; };
+		DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */; };
+		DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */; };
+		DD8E69C1243B5844009B89C9 /* PrimaryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69C0243B5844009B89C9 /* PrimaryTabBarController.swift */; };
 		DDA224A0243A40610046D861 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA2249F243A40610046D861 /* Colors.xcassets */; };
 		DDA224A2243A46100046D861 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A1243A46100046D861 /* Colors.swift */; };
 		DDA224A4243A47A50046D861 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA224A3243A47A50046D861 /* LoginViewController.swift */; };
@@ -37,6 +41,10 @@
 		DD0E3F162438E00D007DDDCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0E3F192438E00D007DDDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0E3F1B2438E00D007DDDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8E69BA243B49B1009B89C9 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
+		DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListing.swift; sourceTree = "<group>"; };
+		DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
+		DD8E69C0243B5844009B89C9 /* PrimaryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTabBarController.swift; sourceTree = "<group>"; };
 		DDA2249F243A40610046D861 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DDA224A1243A46100046D861 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DDA224A3243A47A50046D861 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +103,14 @@
 			path = OnTheMap;
 			sourceTree = "<group>";
 		};
+		DD8E69B9243B4985009B89C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD8E69BA243B49B1009B89C9 /* ListingModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		DDA2249B243A3F450046D861 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 				DDA224A7243A48B90046D861 /* ListingTableViewController.swift */,
 				DDA224A9243A49560046D861 /* AddLocationFormViewController.swift */,
 				DDA224AB243A49920046D861 /* AddLocationMapViewController.swift */,
+				DD8E69C0243B5844009B89C9 /* PrimaryTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +150,7 @@
 		DDA2249E243A3F550046D861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD8E69B9243B4985009B89C9 /* Data */,
 				DDA224B9243A79EB0046D861 /* OTM Client */,
 				DDA224B8243A79D70046D861 /* OTM Responses */,
 				DDA224B7243A79C30046D861 /* OTM Requests */,
@@ -153,6 +171,8 @@
 			children = (
 				DDA224BC243A7B1B0046D861 /* UdacityLoginResponse.swift */,
 				DDA224C0243A9DA80046D861 /* OTMResponse.swift */,
+				DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */,
+				DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */,
 			);
 			path = "OTM Responses";
 			sourceTree = "<group>";
@@ -241,13 +261,17 @@
 				DDA224BB243A7A1A0046D861 /* UdacityLoginRequest.swift in Sources */,
 				DDA224B6243A77540046D861 /* PrimaryLabel.swift in Sources */,
 				DDA224A2243A46100046D861 /* Colors.swift in Sources */,
+				DD8E69C1243B5844009B89C9 /* PrimaryTabBarController.swift in Sources */,
+				DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */,
 				DDA224B0243A5D7F0046D861 /* PrimaryButton.swift in Sources */,
 				DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */,
 				DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */,
 				DDA224BF243A7CD90046D861 /* OTMClient.swift in Sources */,
+				DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */,
 				DD0E3F0E2438E00C007DDDCF /* AppDelegate.swift in Sources */,
 				DDA224A4243A47A50046D861 /* LoginViewController.swift in Sources */,
 				DDA224A6243A482B0046D861 /* ListingMapViewController.swift in Sources */,
+				DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */,
 				DDA224C1243A9DA80046D861 /* OTMResponse.swift in Sources */,
 				DD0E3F102438E00C007DDDCF /* SceneDelegate.swift in Sources */,
 				DDA224AE243A4F800046D861 /* GradientView.swift in Sources */,

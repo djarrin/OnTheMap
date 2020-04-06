@@ -137,12 +137,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="139" y="145"/>
         </scene>
-        <!--View Controller-->
+        <!--Listing Table View Controller-->
         <scene sceneID="vyh-eV-nmQ">
             <objects>
-                <viewController id="ubs-MM-RGQ" sceneMemberID="viewController">
+                <viewController id="ubs-MM-RGQ" customClass="ListingTableViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nsM-xc-we0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="2013" y="469"/>
         </scene>
-        <!--View Controller-->
+        <!--Listing Map View Controller-->
         <scene sceneID="Su0-vu-pVe">
             <objects>
-                <viewController id="jhv-c6-lDG" sceneMemberID="viewController">
+                <viewController id="jhv-c6-lDG" customClass="ListingMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Og-Mz-NwD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="2013" y="-179"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Primary Tab Bar Controller-->
         <scene sceneID="ifG-O3-d6n">
             <objects>
-                <tabBarController id="CUt-Yx-gFd" sceneMemberID="viewController">
+                <tabBarController id="CUt-Yx-gFd" customClass="PrimaryTabBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="i4s-ba-p4d"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G6i-CG-i0o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
