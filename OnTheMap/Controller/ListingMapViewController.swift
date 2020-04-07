@@ -10,6 +10,18 @@ import UIKit
 import MapKit
 
 class ListingMapViewController: UIViewController, MKMapViewDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshMap), name: .refreshAllTabs, object: nil)
+    }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func refreshMap(){
+        print("map refreshing")
+    }
 }
 

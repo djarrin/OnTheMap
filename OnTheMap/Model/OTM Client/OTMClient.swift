@@ -23,12 +23,14 @@ class OTMClient {
         
         case login
         case signUp
+        case studentLocation(String)
         
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.base + "/session"
             case .signUp: return Endpoints.signUpUrl
+            case .studentLocation(let paramerters): return Endpoints.base + "/StudentLocation?" + paramerters
             }
         }
         
@@ -51,6 +53,65 @@ class OTMClient {
                 completion(false, error)
             }
         }
+    }
+    
+    class func studentListings(limit: Int?, skip: Int?, order: String?, uniqueKey: String?, completion: @escaping ([StudentListing], Error?) -> Void) {
+        var paramStringArray: [String] = []
+        if let limit = limit {
+            paramStringArray.append(_: "limit=\(limit)")
+        }
+        if let skip = skip {
+            paramStringArray.append(_: "skip=\(skip)")
+        }
+        if let order = order {
+            paramStringArray.append(_: "order=\(order)")
+        }
+        if let uniqueKey = uniqueKey {
+            paramStringArray.append(_: "uniqueKey=\(uniqueKey)")
+        }
+        let paramString = paramStringArray.joined(separator: "&")
+        _get(url: Endpoints.studentLocation(paramString).url, response: StudentLocationResponse.self) { (response, error) in
+            if let response = response {
+                completion(response.results, nil)
+            } else {
+                completion([], error)
+            }
+        }
+        
+    }
+    
+    @discardableResult class func _get<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+        let task = URLSession.shared.dataTask(with: url) {data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            
+            
+            let decoder = JSONDecoder()
+            do {
+                let responseObject = try decoder.decode(ResponseType.self, from: data)
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            } catch {
+                do {
+                    let errorResponse = try decoder.decode(OTMResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(nil, errorResponse)
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(nil, error)
+                    }
+                }
+            }
+        }
+        task.resume()
+        
+        return task
     }
     
     @discardableResult class func _post<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {

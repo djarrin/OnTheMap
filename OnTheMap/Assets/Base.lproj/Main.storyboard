@@ -137,44 +137,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="139" y="145"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="vyh-eV-nmQ">
+        <!--Navigation Controller-->
+        <scene sceneID="wiG-hb-aSd">
             <objects>
-                <viewController id="ubs-MM-RGQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nsM-xc-we0">
+                <navigationController id="DiY-EE-SFj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-deselected" id="pab-cI-QBJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W3I-J0-Y8t">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rwy-c3-HhW" kind="relationship" relationship="rootViewController" id="rTw-Ze-9sR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6d-fX-O7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="-195"/>
+        </scene>
+        <!--Listing Map View Controller-->
+        <scene sceneID="xuz-xd-QHb">
+            <objects>
+                <viewController id="rwy-c3-HhW" customClass="ListingMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9dc-Wt-c6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="gRO-BM-H34"/>
+                        <viewLayoutGuide key="safeArea" id="r8M-kx-8Gk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-deselected" id="M8c-c2-qYm"/>
+                    <navigationItem key="navigationItem" id="WBe-Ha-FVA"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cke-hH-7cI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tqe-oo-r5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="469"/>
+            <point key="canvasLocation" x="2888" y="-196"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Su0-vu-pVe">
+        <!--Root View Controller-->
+        <scene sceneID="l5U-Ey-LW3">
             <objects>
-                <viewController id="jhv-c6-lDG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Og-Mz-NwD">
+                <tableViewController id="1Go-On-2QV" customClass="ListingTableViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c2c-go-m85">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="RYw-iP-N3h"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-deselected" id="za2-eW-mLJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lyf-fN-3cF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentListingCell" textLabel="Sul-nG-B85" detailTextLabel="hPC-Mq-wOl" imageView="NaH-GC-5bO" style="IBUITableViewCellStyleSubtitle" id="GFA-aS-278">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GFA-aS-278" id="k72-Gj-JLl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sul-nG-B85">
+                                            <rect key="frame" x="59" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hPC-Mq-wOl">
+                                            <rect key="frame" x="59" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_pin" id="NaH-GC-5bO">
+                                            <rect key="frame" x="20" y="15.666666666666664" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Go-On-2QV" id="zSw-Us-nAc"/>
+                            <outlet property="delegate" destination="1Go-On-2QV" id="gfy-uV-TwR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="H2Z-JR-jPm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4U-ay-ZgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="-179"/>
+            <point key="canvasLocation" x="2906" y="604"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="u4y-d6-xci">
+            <objects>
+                <navigationController id="p37-oe-10R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-deselected" id="psS-iQ-jmF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W0Z-SH-FmR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1Go-On-2QV" kind="relationship" relationship="rootViewController" id="a64-ce-5h7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwt-QQ-anW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="604"/>
+        </scene>
+        <!--Primary Tab Bar Controller-->
         <scene sceneID="ifG-O3-d6n">
             <objects>
-                <tabBarController id="CUt-Yx-gFd" sceneMemberID="viewController">
+                <tabBarController id="CUt-Yx-gFd" customClass="PrimaryTabBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="i4s-ba-p4d"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G6i-CG-i0o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -182,8 +250,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jhv-c6-lDG" kind="relationship" relationship="viewControllers" id="2aI-2I-ZoT"/>
-                        <segue destination="ubs-MM-RGQ" kind="relationship" relationship="viewControllers" id="Wuq-WN-KRy"/>
+                        <segue destination="DiY-EE-SFj" kind="relationship" relationship="viewControllers" id="78o-MQ-F1d"/>
+                        <segue destination="p37-oe-10R" kind="relationship" relationship="viewControllers" id="LA2-t9-Ilm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oQ-Sx-sEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,6 +263,7 @@
         <image name="LaunchLogo" width="80" height="80"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
         <namedColor name="blue-baby">
             <color red="0.53333333333333333" green="0.64313725490196083" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
