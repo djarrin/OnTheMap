@@ -93,7 +93,6 @@ class OTMClient {
             let decoder = JSONDecoder()
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: data)
-                print(responseObject)
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
                 }
