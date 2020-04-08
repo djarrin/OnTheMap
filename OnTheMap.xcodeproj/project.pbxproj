@@ -12,6 +12,8 @@
 		DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F132438E00C007DDDCF /* Main.storyboard */; };
 		DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F162438E00D007DDDCF /* Assets.xcassets */; };
 		DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */; };
+		DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */; };
+		DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */; };
 		DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BA243B49B1009B89C9 /* ListingModel.swift */; };
 		DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */; };
 		DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */; };
@@ -41,6 +43,8 @@
 		DD0E3F162438E00D007DDDCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0E3F192438E00D007DDDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0E3F1B2438E00D007DDDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingTableViewController+utils.swift"; sourceTree = "<group>"; };
+		DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingMapViewController+utils.swift"; sourceTree = "<group>"; };
 		DD8E69BA243B49B1009B89C9 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListing.swift; sourceTree = "<group>"; };
 		DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 			path = OnTheMap;
 			sourceTree = "<group>";
 		};
+		DD6ECD81243CAC82005BD83F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */,
+				DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DD8E69B9243B4985009B89C9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		DDA2249C243A3F4B0046D861 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD6ECD81243CAC82005BD83F /* Extensions */,
 				DDA224A3243A47A50046D861 /* LoginViewController.swift */,
 				DDA224A5243A482B0046D861 /* ListingMapViewController.swift */,
 				DDA224A7243A48B90046D861 /* ListingTableViewController.swift */,
@@ -263,7 +277,9 @@
 				DDA224A2243A46100046D861 /* Colors.swift in Sources */,
 				DD8E69C1243B5844009B89C9 /* PrimaryTabBarController.swift in Sources */,
 				DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */,
+				DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */,
 				DDA224B0243A5D7F0046D861 /* PrimaryButton.swift in Sources */,
+				DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */,
 				DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */,
 				DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */,
 				DDA224BF243A7CD90046D861 /* OTMClient.swift in Sources */,

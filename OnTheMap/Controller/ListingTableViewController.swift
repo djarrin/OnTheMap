@@ -13,6 +13,7 @@ class ListingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,19 +59,6 @@ class ListingTableViewController: UITableViewController {
         if isValidURL(string: linkString) {
             UIApplication.shared.open(URL(string: linkString)!, options: [:], completionHandler: nil)
         }
-    }
-    
-    // Credit to Edouard Barbie for the code: https://stackoverflow.com/a/44663574/2769705
-    // I'm still getting errors like -canOpenURL: failed for URL: "dddddddddd" - error: "Invalid input URL" which doesn't make much since to
-    // me as I'm unwrapping and checking that it is an instance of URL
-    func isValidURL(string : String) -> Bool {
-
-        if let url = URL(string: string) {
-
-            return UIApplication.shared.canOpenURL(url)
-        }
-
-    return false
     }
 }
 

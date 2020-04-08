@@ -21,14 +21,14 @@ class OTMClient {
         static let base = "https://onthemap-api.udacity.com/v1"
         static let signUpUrl = "https://auth.udacity.com/sign-up"
         
-        case login
+        case session
         case signUp
         case studentLocation(String)
         
         
         var stringValue: String {
             switch self {
-            case .login: return Endpoints.base + "/session"
+            case .session: return Endpoints.base + "/session"
             case .signUp: return Endpoints.signUpUrl
             case .studentLocation(let paramerters): return Endpoints.base + "/StudentLocation?" + paramerters
             }
@@ -41,7 +41,7 @@ class OTMClient {
     
     class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         let body = UdacityLoginRequest(udacity: LoginParams(username: username, password: password))
-        _post(url: Endpoints.login.url, responseType: UdacityLoginResponse.self, body: body) { (response, error) in
+        _post(url: Endpoints.session.url, responseType: UdacityLoginResponse.self, body: body) { (response, error) in
             if let response = response {
                 Auth.registered = response.account.registered
                 Auth.key = response.account.key
@@ -55,7 +55,7 @@ class OTMClient {
         }
     }
     
-    class func studentListings(limit: Int?, skip: Int?, order: String?, uniqueKey: String?, completion: @escaping ([StudentListing], Error?) -> Void) {
+    class func studentListings(limit: Int? = 100, skip: Int? = nil, order: String? = nil, uniqueKey: String? = nil, completion: @escaping ([StudentListing], Error?) -> Void) {
         var paramStringArray: [String] = []
         if let limit = limit {
             paramStringArray.append(_: "limit=\(limit)")
@@ -78,6 +78,30 @@ class OTMClient {
             }
         }
         
+    }
+    
+    class func logout(completion: @escaping (Bool, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.session.url)
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+          if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+          request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            Auth.expiration = ""
+            Auth.key = ""
+            Auth.registered = false
+            Auth.id = ""
+            DispatchQueue.main.async {
+                completion(true, nil)
+            }
+        }
+        task.resume()
     }
     
     @discardableResult class func _get<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {

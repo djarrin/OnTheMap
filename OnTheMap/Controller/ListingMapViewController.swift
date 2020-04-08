@@ -13,6 +13,7 @@ class ListingMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigation()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshMap), name: .refreshAllTabs, object: nil)
     }
     
