@@ -12,7 +12,7 @@ class PrimaryTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OTMClient.studentListings(limit: 100, skip: nil, order: nil, uniqueKey: nil) { (listings, error) in
+        OTMClient.studentListings() { (listings, error) in
             ListingModel.studentListings = listings
             NotificationCenter.default.post(Notification(name: .refreshAllTabs))
         }

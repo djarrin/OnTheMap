@@ -53,10 +53,15 @@ extension ListingTableViewController {
     }
     
     @objc func refresh() {
-        
+        OTMClient.studentListings { (listings, error) in
+            ListingModel.studentListings = listings
+            NotificationCenter.default.post(Notification(name: .refreshAllTabs))
+        }
     }
     
     @objc func post() {
-        
+        if let alnc = self.storyboard?.instantiateViewController(withIdentifier: "AddLocationNavigationController") {
+            self.present(alnc, animated: true, completion: nil)
+        }
     }
 }

@@ -172,6 +172,53 @@
             </objects>
             <point key="canvasLocation" x="2888" y="-196"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PnF-O6-vQy">
+            <objects>
+                <navigationController storyboardIdentifier="AddLocationNavigationController" id="T5r-Pt-mKC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Rs-PO-E0U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qhr-7J-4Zi" kind="relationship" relationship="rootViewController" id="wJh-Za-28Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCp-kd-czw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="193"/>
+        </scene>
+        <!--Add Location Form View Controller-->
+        <scene sceneID="Qyk-zD-4Ih">
+            <objects>
+                <viewController storyboardIdentifier="AddLocationFormViewController" id="Qhr-7J-4Zi" customClass="AddLocationFormViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pw2-Fz-wEe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ysH-1p-eun"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZbK-KF-fY0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ja0-kU-wZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4636" y="192"/>
+        </scene>
+        <!--Add Location Map View Controller-->
+        <scene sceneID="bzk-pH-apj">
+            <objects>
+                <viewController storyboardIdentifier="AddLocationMapViewController" id="d2G-aa-agn" customClass="AddLocationMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gqn-Nh-bVv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="M0W-1s-DyG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVY-Bb-FHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5413" y="196"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="l5U-Ey-LW3">
             <objects>

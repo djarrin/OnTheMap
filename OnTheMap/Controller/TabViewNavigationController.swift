@@ -1,14 +1,21 @@
 //
-//  ListingMapViewController+utils.swift
+//  TabViewNavigationController.swift
 //  OnTheMap
 //
-//  Created by David Jarrin on 4/7/20.
+//  Created by David Jarrin on 4/8/20.
 //  Copyright © 2020 David Jarrin. All rights reserved.
 //
 
 import UIKit
 
-extension ListingMapViewController {
+class TabViewNavigationController: UINavigationController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setNavigation()
+    }
+    
     // Credit to Edouard Barbie for the code: https://stackoverflow.com/a/44663574/2769705
     // I'm still getting errors like -canOpenURL: failed for URL: "dddddddddd" - error: "Invalid input URL" which doesn't make much since to
     // me as I'm unwrapping and checking that it is an instance of URL
@@ -28,7 +35,7 @@ extension ListingMapViewController {
         logoutButton.setTitle("LOGOUT", for: .normal)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logoutButton)
-        navigationItem.title = "On the Map"
+        self.title = "On the Map"
         
         let refreshButton = UIButton(type: .system)
         refreshButton.setImage(UIImage(named: "icon_refresh"), for: .normal)
@@ -60,7 +67,7 @@ extension ListingMapViewController {
     }
     
     @objc func post() {
-        if let alnc = self.storyboard?.instantiateViewController(withIdentifier: "AddLocationNavigationController") {
+        if let alnc = self.storyboard?.instantiateViewController(withIdentifier: "AddLocationNavigationController") as? AddLocationNavigationController {
             self.present(alnc, animated: true, completion: nil)
         }
     }

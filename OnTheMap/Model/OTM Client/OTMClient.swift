@@ -55,7 +55,7 @@ class OTMClient {
         }
     }
     
-    class func studentListings(limit: Int?, skip: Int?, order: String?, uniqueKey: String?, completion: @escaping ([StudentListing], Error?) -> Void) {
+    class func studentListings(limit: Int? = 100, skip: Int? = nil, order: String? = nil, uniqueKey: String? = nil, completion: @escaping ([StudentListing], Error?) -> Void) {
         var paramStringArray: [String] = []
         if let limit = limit {
             paramStringArray.append(_: "limit=\(limit)")
