@@ -163,14 +163,23 @@
                     <view key="view" contentMode="scaleToFill" id="9dc-Wt-c6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bLn-dN-m2r">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="r8M-kx-8Gk"/>
                     </view>
                     <navigationItem key="navigationItem" id="WBe-Ha-FVA"/>
+                    <connections>
+                        <outlet property="mapView" destination="bLn-dN-m2r" id="fUM-Pd-w44"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqe-oo-r5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2888" y="-196"/>
+            <point key="canvasLocation" x="2886.9565217391305" y="-196.20535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PnF-O6-vQy">
