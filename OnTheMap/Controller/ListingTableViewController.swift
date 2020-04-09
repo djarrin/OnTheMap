@@ -58,6 +58,10 @@ class ListingTableViewController: UITableViewController {
         let linkString = ListingModel.studentListings[indexPath.row].mediaURL
         if isValidURL(string: linkString) {
             UIApplication.shared.open(URL(string: linkString)!, options: [:], completionHandler: nil)
+        } else {
+            let alert = UIAlertController(title: "Invalid URL", message: "This user does not have a valid URL associated to their lcoation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
