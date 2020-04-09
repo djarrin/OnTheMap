@@ -211,10 +211,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-sB-G8O">
-                                <rect key="frame" x="181" y="218" width="52" height="67"/>
+                                <rect key="frame" x="181" y="148" width="52" height="67"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="x3d-HT-nqG">
-                                <rect key="frame" x="20" y="335" width="374" height="165"/>
+                                <rect key="frame" x="20" y="265" width="374" height="165"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kv-SI-Vjh" customClass="PrimaryTextField" customModule="OnTheMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -241,24 +241,47 @@
                                         <state key="normal" title="FIND LOCATION">
                                             <color key="titleColor" name="dark-tree"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SubmitLocation:" destination="Qhr-7J-4Zi" eventType="touchUpInside" id="2An-E1-RGD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="dRN-fo-iXZ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAU-GE-7Sb">
+                                <rect key="frame" x="207" y="445" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pVP-aC-VKR">
+                                <rect key="frame" x="197" y="460" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="turquoise"/>
                         <constraints>
+                            <constraint firstItem="iAU-GE-7Sb" firstAttribute="top" secondItem="x3d-HT-nqG" secondAttribute="bottom" constant="15" id="2DQ-2a-0nZ"/>
                             <constraint firstItem="x3d-HT-nqG" firstAttribute="leading" secondItem="pw2-Fz-wEe" secondAttribute="leadingMargin" id="3m4-1R-Wzp"/>
                             <constraint firstItem="x3d-HT-nqG" firstAttribute="centerX" secondItem="ysH-1p-eun" secondAttribute="centerX" id="8A9-Nd-wx2"/>
                             <constraint firstItem="5cC-sB-G8O" firstAttribute="centerX" secondItem="ysH-1p-eun" secondAttribute="centerX" id="A1e-uA-dMU"/>
+                            <constraint firstItem="pVP-aC-VKR" firstAttribute="centerX" secondItem="ysH-1p-eun" secondAttribute="centerX" id="ACV-ZN-7al"/>
                             <constraint firstItem="x3d-HT-nqG" firstAttribute="top" secondItem="5cC-sB-G8O" secondAttribute="bottom" constant="50" id="PbH-IM-pLU"/>
-                            <constraint firstItem="5cC-sB-G8O" firstAttribute="top" secondItem="ysH-1p-eun" secondAttribute="top" constant="130" id="zsY-Bh-QFc"/>
+                            <constraint firstItem="iAU-GE-7Sb" firstAttribute="centerX" secondItem="ysH-1p-eun" secondAttribute="centerX" id="aVP-bW-wRQ"/>
+                            <constraint firstItem="pVP-aC-VKR" firstAttribute="top" secondItem="iAU-GE-7Sb" secondAttribute="bottom" constant="15" id="eJz-07-2Wj"/>
+                            <constraint firstItem="5cC-sB-G8O" firstAttribute="top" secondItem="ysH-1p-eun" secondAttribute="top" constant="60" id="zsY-Bh-QFc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ysH-1p-eun"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZbK-KF-fY0"/>
+                    <connections>
+                        <outlet property="ActivityIndicator" destination="pVP-aC-VKR" id="PTi-pS-E32"/>
+                        <outlet property="ErrorMessage" destination="iAU-GE-7Sb" id="jyB-UY-Cqn"/>
+                        <outlet property="LinkURLTextField" destination="3xM-7Q-LVc" id="P7b-nu-n70"/>
+                        <outlet property="LocationTextField" destination="2Kv-SI-Vjh" id="1rv-Fu-0vA"/>
+                        <outlet property="SubmitButton" destination="NMc-6f-vub" id="e7L-Ji-ATK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ja0-kU-wZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

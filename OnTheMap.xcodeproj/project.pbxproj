@@ -12,6 +12,7 @@
 		DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F132438E00C007DDDCF /* Main.storyboard */; };
 		DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F162438E00D007DDDCF /* Assets.xcassets */; };
 		DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */; };
+		DD3631FD243F52AE000B15A5 /* AddLocationFormViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */; };
 		DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */; };
 		DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */; };
 		DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BA243B49B1009B89C9 /* ListingModel.swift */; };
@@ -43,6 +44,7 @@
 		DD0E3F162438E00D007DDDCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0E3F192438E00D007DDDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0E3F1B2438E00D007DDDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLocationFormViewController+utils.swift"; sourceTree = "<group>"; };
 		DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingTableViewController+utils.swift"; sourceTree = "<group>"; };
 		DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingMapViewController+utils.swift"; sourceTree = "<group>"; };
 		DD8E69BA243B49B1009B89C9 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */,
 				DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */,
+				DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */,
 				DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */,
 				DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */,
+				DD3631FD243F52AE000B15A5 /* AddLocationFormViewController+utils.swift in Sources */,
 				DDA224BF243A7CD90046D861 /* OTMClient.swift in Sources */,
 				DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */,
 				DD0E3F0E2438E00C007DDDCF /* AppDelegate.swift in Sources */,
