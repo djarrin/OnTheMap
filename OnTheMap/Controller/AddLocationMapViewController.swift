@@ -10,5 +10,13 @@ import UIKit
 import MapKit
 
 class AddLocationMapViewController: UIViewController, MKMapViewDelegate {
+    var latitude: CLLocationDegrees? = 0.0
+    var longitude: CLLocationDegrees? = 0.0
+    var link: URL?
     
+    override func viewDidLoad() {
+        print(latitude)
+        print(longitude)
+        print(link)
+    }
 }

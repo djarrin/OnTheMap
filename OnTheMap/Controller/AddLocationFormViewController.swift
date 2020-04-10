@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+// Credit to Bart Jacobs for some help with his article here: https://cocoacasts.com/forward-geocoding-with-clgeocoder
+
 class AddLocationFormViewController: UIViewController {
     @IBOutlet weak var LocationTextField: PrimaryTextField!
     @IBOutlet weak var LinkURLTextField: PrimaryTextField!
@@ -17,6 +19,9 @@ class AddLocationFormViewController: UIViewController {
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     
     lazy var geocoder = CLGeocoder()
+    var latitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees?
+    var link: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,14 @@ class AddLocationFormViewController: UIViewController {
         navigationItem.title = "Add Location"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPostLocationSegue" {
+            let almvc = segue.destination as! AddLocationMapViewController
+            almvc.latitude = latitude
+            almvc.longitude = longitude
+            almvc.link = link
+        }
+    }
     
     @IBAction func SubmitLocation(_ sender: Any) {
         loadingRequest(true)
@@ -43,14 +56,22 @@ class AddLocationFormViewController: UIViewController {
             loadingRequest(false)
             ErrorMessage.text = validationErrors.invalidLinkUrl.stringValue
             return
+        } else {
+            link = URL(string: LinkURLTextField.text!)
         }
         
         geocoder.geocodeAddressString(LocationTextField.text!) {(placemarks, error) in
             if let placemarks = placemarks {
-                print(placemarks)
+                if let almvc = self.storyboard?.instantiateViewController(withIdentifier: "AddLocationMapViewController") as? AddLocationMapViewController {
+                    print(placemarks)
+                    self.latitude = placemarks.first?.location?.coordinate.latitude
+                    self.longitude = placemarks.first?.location?.coordinate.longitude
+                    self.performSegue(withIdentifier: "ShowPostLocationSegue", sender: almvc)
+                }
             } else {
-                print(error)
+                self.ErrorMessage.text = validationErrors.unableToFindLocation.stringValue
             }
+            self.loadingRequest(false)
         }
     }
     
