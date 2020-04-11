@@ -58,7 +58,6 @@ class AddLocationFormViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(textField.tag)
         switch textField.tag {
         case 0:
             LinkURLTextField.becomeFirstResponder()
