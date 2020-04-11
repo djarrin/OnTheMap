@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: PrimaryTextField!
     @IBOutlet weak var passwordField: PrimaryTextField!
@@ -19,11 +19,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailField.delegate = self
+        passwordField.delegate = self
+        emailField.tag = 0
+        passwordField.tag = 1
+        
         emailField.placeholder = "Email"
         passwordField.placeholder = "Password"
     }
     
-    @IBAction func loginTapped(_ sender: UIButton) {
+    @IBAction func loginTapped() {
         setLoggingIn(true)
         OTMClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:))
     }
@@ -40,6 +45,19 @@ class LoginViewController: UIViewController {
             displayError(message: error?.localizedDescription ?? "")
         }
         setLoggingIn(false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(textField.tag)
+        switch textField.tag {
+        case 0:
+            passwordField.becomeFirstResponder()
+        case 1:
+            loginTapped()
+        default:
+            return true
+        }
+        return true
     }
     
     func displayError(message: String) {

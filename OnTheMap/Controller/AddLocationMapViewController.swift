@@ -52,7 +52,9 @@ class AddLocationMapViewController: MapViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
-                print(error)
+                let alert = UIAlertController(title: "Upload Issue", message: "On the map was unable to upload your student listing. Please Try again later.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

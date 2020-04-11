@@ -14,12 +14,12 @@
 		DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */; };
 		DD3631FD243F52AE000B15A5 /* AddLocationFormViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */; };
 		DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */; };
-		DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */; };
 		DD7ADA692441FA880043D812 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA682441FA880043D812 /* MapViewController.swift */; };
 		DD7ADA6B2441FB1D0043D812 /* MapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */; };
 		DD7ADA6D24420D020043D812 /* PostStudentListingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6C24420D020043D812 /* PostStudentListingResponse.swift */; };
 		DD7ADA6F24420E680043D812 /* PostStudentListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6E24420E680043D812 /* PostStudentListingRequest.swift */; };
 		DD7ADA71244217E40043D812 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA70244217E40043D812 /* UserResponse.swift */; };
+		DD7ADA742442353B0043D812 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD7ADA73244235010043D812 /* fa-regular-400.ttf */; };
 		DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BA243B49B1009B89C9 /* ListingModel.swift */; };
 		DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */; };
 		DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */; };
@@ -51,12 +51,14 @@
 		DD0E3F1B2438E00D007DDDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLocationFormViewController+utils.swift"; sourceTree = "<group>"; };
 		DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingTableViewController+utils.swift"; sourceTree = "<group>"; };
-		DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingMapViewController+utils.swift"; sourceTree = "<group>"; };
 		DD7ADA682441FA880043D812 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+utils.swift"; sourceTree = "<group>"; };
 		DD7ADA6C24420D020043D812 /* PostStudentListingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentListingResponse.swift; sourceTree = "<group>"; };
 		DD7ADA6E24420E680043D812 /* PostStudentListingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentListingRequest.swift; sourceTree = "<group>"; };
 		DD7ADA70244217E40043D812 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		DD7ADA73244235010043D812 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-regular-400.ttf"; path = "../../../../../../../../Downloads/fontawesome-free-5.13.0-web/webfonts/fa-regular-400.ttf"; sourceTree = "<group>"; };
+		DD7ADA75244237040043D812 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
+		DD7ADA76244237150043D812 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-900.ttf"; sourceTree = "<group>"; };
 		DD8E69BA243B49B1009B89C9 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListing.swift; sourceTree = "<group>"; };
 		DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
@@ -123,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */,
-				DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */,
 				DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */,
 				DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */,
 			);
@@ -141,6 +142,9 @@
 		DDA2249B243A3F450046D861 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DD7ADA73244235010043D812 /* fa-regular-400.ttf */,
+				DD7ADA76244237150043D812 /* fa-solid-900.ttf */,
+				DD7ADA75244237040043D812 /* fa-brands-400.ttf */,
 				DD0E3F182438E00D007DDDCF /* LaunchScreen.storyboard */,
 				DD0E3F132438E00C007DDDCF /* Main.storyboard */,
 				DD0E3F162438E00D007DDDCF /* Assets.xcassets */,
@@ -276,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0E3F1A2438E00D007DDDCF /* LaunchScreen.storyboard in Resources */,
+				DD7ADA742442353B0043D812 /* fa-regular-400.ttf in Resources */,
 				DDA224A0243A40610046D861 /* Colors.xcassets in Resources */,
 				DD0E3F172438E00D007DDDCF /* Assets.xcassets in Resources */,
 				DD0E3F152438E00C007DDDCF /* Main.storyboard in Resources */,
@@ -295,7 +300,6 @@
 				DDA224A2243A46100046D861 /* Colors.swift in Sources */,
 				DD8E69C1243B5844009B89C9 /* PrimaryTabBarController.swift in Sources */,
 				DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */,
-				DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */,
 				DD7ADA692441FA880043D812 /* MapViewController.swift in Sources */,
 				DD7ADA6B2441FB1D0043D812 /* MapViewController+utils.swift in Sources */,
 				DDA224B0243A5D7F0046D861 /* PrimaryButton.swift in Sources */,
