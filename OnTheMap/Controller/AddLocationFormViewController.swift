@@ -11,7 +11,7 @@ import CoreLocation
 
 // Credit to Bart Jacobs for some help with his article here: https://cocoacasts.com/forward-geocoding-with-clgeocoder
 
-class AddLocationFormViewController: UIViewController {
+class AddLocationFormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LocationTextField: PrimaryTextField!
     @IBOutlet weak var LinkURLTextField: PrimaryTextField!
     @IBOutlet weak var SubmitButton: PrimaryButton!
@@ -26,6 +26,17 @@ class AddLocationFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // to deal with dark mode, for some reason had to do it this way even though these are inheriting from PrimaryTextField?
+        LocationTextField.attributedPlaceholder = NSAttributedString(string: "Location",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        LocationTextField.delegate = self
+        LocationTextField.tag = 0
+        
+        LinkURLTextField.attributedPlaceholder = NSAttributedString(string: "Link URL",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        LinkURLTextField.delegate = self
+        LinkURLTextField.tag = 1
         
         let cancelButton = UIButton(type: .system)
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
@@ -46,7 +57,20 @@ class AddLocationFormViewController: UIViewController {
         }
     }
     
-    @IBAction func SubmitLocation(_ sender: Any) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(textField.tag)
+        switch textField.tag {
+        case 0:
+            LinkURLTextField.becomeFirstResponder()
+        case 1:
+            SubmitLocation()
+        default:
+            return true
+        }
+        return true
+    }
+    
+    @IBAction func SubmitLocation() {
         loadingRequest(true)
         if LocationTextField.text == "" || LinkURLTextField.text == "" {
             loadingRequest(false)
@@ -73,6 +97,7 @@ class AddLocationFormViewController: UIViewController {
                     self.latitude = placemarks.first?.location?.coordinate.latitude
                     self.longitude = placemarks.first?.location?.coordinate.longitude
                     self.locationString = "\(String(describing: placemarks.first?.locality ?? "")), \(placemarks.first?.administrativeArea ?? ""), \(placemarks.first?.country ?? "")"
+                    self.ErrorMessage.text = ""
                     self.performSegue(withIdentifier: "ShowPostLocationSegue", sender: almvc)
                 }
             } else {
@@ -83,7 +108,6 @@ class AddLocationFormViewController: UIViewController {
     }
     
     func loadingRequest(_ requestSending: Bool) {
-        ErrorMessage.text = ""
         if requestSending {
             ActivityIndicator.startAnimating()
         } else {
