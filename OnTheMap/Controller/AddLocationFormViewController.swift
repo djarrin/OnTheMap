@@ -54,12 +54,17 @@ class AddLocationFormViewController: UIViewController {
             return
         }
         
+        // Go ahead and add http protocol if they don't already have it
+        if !(LinkURLTextField.text?.hasPrefix("https://") ?? false) && !(LinkURLTextField.text?.hasPrefix("http://") ?? false) {
+            LinkURLTextField.text = "http://\(LinkURLTextField.text ?? "")"
+        }
+        
         if !isValidURL(string: LinkURLTextField.text!) {
             loadingRequest(false)
             ErrorMessage.text = validationErrors.invalidLinkUrl.stringValue
             return
         } else {
-            link = LinkURLTextField.text!
+            link = LinkURLTextField.text ?? ""
         }
         
         geocoder.geocodeAddressString(LocationTextField.text!) {(placemarks, error) in

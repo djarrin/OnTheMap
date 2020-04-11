@@ -16,21 +16,27 @@ extension ListingMapViewController {
     func setNavigation() {
         let logoutButton = UIButton(type: .system)
         logoutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
+        logoutButton.tintColor = UIColor.white
         logoutButton.setTitle("LOGOUT", for: .normal)
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logoutButton)
+        
         navigationItem.title = "On the Map"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         let refreshButton = UIButton(type: .system)
         refreshButton.setImage(UIImage(named: "icon_refresh"), for: .normal)
+        refreshButton.tintColor = UIColor.white
         refreshButton.addTarget(self, action: #selector(refresh), for: .touchUpInside)
         let refreshBarButton = UIBarButtonItem(customView: refreshButton)
         
         let postButton = UIButton(type: .system)
         postButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        postButton.tintColor = UIColor.white
         postButton.addTarget(self, action: #selector(post), for: .touchUpInside)
         let postBarButton = UIBarButtonItem(customView: postButton)
         
+        navigationController?.navigationBar.barTintColor = UIColor.turquoise
         navigationItem.setRightBarButtonItems([refreshBarButton, postBarButton], animated: true)
     }
     

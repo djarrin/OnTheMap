@@ -49,7 +49,7 @@ class ListingTableViewController: UITableViewController {
             cell.detailTextLabel?.text = ""
         }
         
-        cell.imageView?.image = UIImage(named: "icon_pin")
+        cell.imageView?.image = UIImage(systemName: "mappin")
         
         return cell
     }
