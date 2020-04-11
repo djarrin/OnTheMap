@@ -15,6 +15,11 @@
 		DD3631FD243F52AE000B15A5 /* AddLocationFormViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */; };
 		DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */; };
 		DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */; };
+		DD7ADA692441FA880043D812 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA682441FA880043D812 /* MapViewController.swift */; };
+		DD7ADA6B2441FB1D0043D812 /* MapViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */; };
+		DD7ADA6D24420D020043D812 /* PostStudentListingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6C24420D020043D812 /* PostStudentListingResponse.swift */; };
+		DD7ADA6F24420E680043D812 /* PostStudentListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA6E24420E680043D812 /* PostStudentListingRequest.swift */; };
+		DD7ADA71244217E40043D812 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ADA70244217E40043D812 /* UserResponse.swift */; };
 		DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BA243B49B1009B89C9 /* ListingModel.swift */; };
 		DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */; };
 		DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */; };
@@ -47,6 +52,11 @@
 		DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddLocationFormViewController+utils.swift"; sourceTree = "<group>"; };
 		DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingTableViewController+utils.swift"; sourceTree = "<group>"; };
 		DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingMapViewController+utils.swift"; sourceTree = "<group>"; };
+		DD7ADA682441FA880043D812 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+utils.swift"; sourceTree = "<group>"; };
+		DD7ADA6C24420D020043D812 /* PostStudentListingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentListingResponse.swift; sourceTree = "<group>"; };
+		DD7ADA6E24420E680043D812 /* PostStudentListingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentListingRequest.swift; sourceTree = "<group>"; };
+		DD7ADA70244217E40043D812 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		DD8E69BA243B49B1009B89C9 /* ListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListing.swift; sourceTree = "<group>"; };
 		DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 				DD6ECD82243CACAF005BD83F /* ListingTableViewController+utils.swift */,
 				DD6ECD84243CACC8005BD83F /* ListingMapViewController+utils.swift */,
 				DD3631FC243F52AE000B15A5 /* AddLocationFormViewController+utils.swift */,
+				DD7ADA6A2441FB1D0043D812 /* MapViewController+utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 				DDA224A9243A49560046D861 /* AddLocationFormViewController.swift */,
 				DDA224AB243A49920046D861 /* AddLocationMapViewController.swift */,
 				DD8E69C0243B5844009B89C9 /* PrimaryTabBarController.swift */,
+				DD7ADA682441FA880043D812 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA224BA243A7A1A0046D861 /* UdacityLoginRequest.swift */,
+				DD7ADA6E24420E680043D812 /* PostStudentListingRequest.swift */,
 			);
 			path = "OTM Requests";
 			sourceTree = "<group>";
@@ -190,6 +203,8 @@
 				DDA224C0243A9DA80046D861 /* OTMResponse.swift */,
 				DD8E69BC243B4A2A009B89C9 /* StudentListing.swift */,
 				DD8E69BE243B4B4E009B89C9 /* StudentLocationResponse.swift */,
+				DD7ADA6C24420D020043D812 /* PostStudentListingResponse.swift */,
+				DD7ADA70244217E40043D812 /* UserResponse.swift */,
 			);
 			path = "OTM Responses";
 			sourceTree = "<group>";
@@ -281,14 +296,18 @@
 				DD8E69C1243B5844009B89C9 /* PrimaryTabBarController.swift in Sources */,
 				DD8E69BB243B49B1009B89C9 /* ListingModel.swift in Sources */,
 				DD6ECD85243CACC8005BD83F /* ListingMapViewController+utils.swift in Sources */,
+				DD7ADA692441FA880043D812 /* MapViewController.swift in Sources */,
+				DD7ADA6B2441FB1D0043D812 /* MapViewController+utils.swift in Sources */,
 				DDA224B0243A5D7F0046D861 /* PrimaryButton.swift in Sources */,
 				DD6ECD83243CACAF005BD83F /* ListingTableViewController+utils.swift in Sources */,
+				DD7ADA71244217E40043D812 /* UserResponse.swift in Sources */,
 				DDA224AA243A49560046D861 /* AddLocationFormViewController.swift in Sources */,
 				DDA224AC243A49920046D861 /* AddLocationMapViewController.swift in Sources */,
 				DD3631FD243F52AE000B15A5 /* AddLocationFormViewController+utils.swift in Sources */,
 				DDA224BF243A7CD90046D861 /* OTMClient.swift in Sources */,
 				DD8E69BF243B4B4E009B89C9 /* StudentLocationResponse.swift in Sources */,
 				DD0E3F0E2438E00C007DDDCF /* AppDelegate.swift in Sources */,
+				DD7ADA6F24420E680043D812 /* PostStudentListingRequest.swift in Sources */,
 				DDA224A4243A47A50046D861 /* LoginViewController.swift in Sources */,
 				DDA224A6243A482B0046D861 /* ListingMapViewController.swift in Sources */,
 				DD8E69BD243B4A2A009B89C9 /* StudentListing.swift in Sources */,
@@ -296,6 +315,7 @@
 				DD0E3F102438E00C007DDDCF /* SceneDelegate.swift in Sources */,
 				DDA224AE243A4F800046D861 /* GradientView.swift in Sources */,
 				DDA224BD243A7B1B0046D861 /* UdacityLoginResponse.swift in Sources */,
+				DD7ADA6D24420D020043D812 /* PostStudentListingResponse.swift in Sources */,
 				DDA224B4243A75C60046D861 /* PrimaryTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

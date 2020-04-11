@@ -21,7 +21,8 @@ class AddLocationFormViewController: UIViewController {
     lazy var geocoder = CLGeocoder()
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
-    var link: URL?
+    var locationString: String?
+    var link: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class AddLocationFormViewController: UIViewController {
             almvc.latitude = latitude
             almvc.longitude = longitude
             almvc.link = link
+            almvc.locationString = locationString
         }
     }
     
@@ -57,15 +59,15 @@ class AddLocationFormViewController: UIViewController {
             ErrorMessage.text = validationErrors.invalidLinkUrl.stringValue
             return
         } else {
-            link = URL(string: LinkURLTextField.text!)
+            link = LinkURLTextField.text!
         }
         
         geocoder.geocodeAddressString(LocationTextField.text!) {(placemarks, error) in
             if let placemarks = placemarks {
                 if let almvc = self.storyboard?.instantiateViewController(withIdentifier: "AddLocationMapViewController") as? AddLocationMapViewController {
-                    print(placemarks)
                     self.latitude = placemarks.first?.location?.coordinate.latitude
                     self.longitude = placemarks.first?.location?.coordinate.longitude
+                    self.locationString = "\(String(describing: placemarks.first?.locality ?? "")), \(placemarks.first?.administrativeArea ?? ""), \(placemarks.first?.country ?? "")"
                     self.performSegue(withIdentifier: "ShowPostLocationSegue", sender: almvc)
                 }
             } else {
