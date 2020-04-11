@@ -14,7 +14,6 @@ class PrimaryTabBarController: UITabBarController {
         
         OTMClient.studentListings(limit: 100, order: "-updatedAt") { (listings, error) in
             ListingModel.studentListings = listings
-            print(listings)
             NotificationCenter.default.post(Notification(name: .refreshAllTabs))
             if let _ = error {
                 let alert = UIAlertController(title: "Download Issue", message: "On the map was unable to download student locations. Please Try again later.", preferredStyle: .alert)
