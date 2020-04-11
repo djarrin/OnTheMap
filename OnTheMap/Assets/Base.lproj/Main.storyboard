@@ -221,6 +221,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="jC0-SR-6wh"/>
                                         </constraints>
+                                        <color key="textColor" name="gray-stone"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
@@ -231,6 +232,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="2Zt-QX-5X0"/>
                                         </constraints>
+                                        <color key="textColor" name="gray-stone"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
                                     </textField>
