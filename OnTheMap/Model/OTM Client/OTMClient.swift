@@ -15,6 +15,8 @@ class OTMClient {
         static var key: String = ""
         static var id: String = ""
         static var expiration: String = ""
+        static var firstName: String = ""
+        static var lastName: String = ""
     }
     
     enum Endpoints {
@@ -24,6 +26,7 @@ class OTMClient {
         case session
         case signUp
         case studentLocation(String)
+        case user(String)
         
         
         var stringValue: String {
@@ -31,6 +34,7 @@ class OTMClient {
             case .session: return Endpoints.base + "/session"
             case .signUp: return Endpoints.signUpUrl
             case .studentLocation(let paramerters): return Endpoints.base + "/StudentLocation?" + paramerters
+            case .user(let userID): return Endpoints.base + "/users/\(userID)"
             }
         }
         
@@ -41,14 +45,23 @@ class OTMClient {
     
     class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         let body = UdacityLoginRequest(udacity: LoginParams(username: username, password: password))
-        _post(url: Endpoints.session.url, responseType: UdacityLoginResponse.self, body: body) { (response, error) in
+        _post(url: Endpoints.session.url, responseType: UdacityLoginResponse.self, body: body, stripResonse: true) { (response, error) in
             if let response = response {
                 Auth.registered = response.account.registered
                 Auth.key = response.account.key
                 Auth.id = response.session.id
                 Auth.expiration = response.session.expiration
-                
-                completion(true, nil)
+    
+                getUser(userID: Auth.key) { (response, error) in
+                    if let response = response {
+                        Auth.firstName = response.firstName
+                        Auth.lastName = response.lastName
+                        
+                        completion(true, nil)
+                    } else {
+                        completion(false, error)
+                    }
+                }
             } else {
                 completion(false, error)
             }
@@ -80,6 +93,28 @@ class OTMClient {
         
     }
     
+    class func postStudentLocation(firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double, completion: @escaping (PostStudentListingResponse?, Error?) -> Void) {
+        let uniqueId = UUID().uuidString
+        let body = PostStudentListingRequest(uniqueKey: uniqueId, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        _post(url: Endpoints.studentLocation("").url, responseType: PostStudentListingResponse.self, body: body) { (response, error) in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getUser(userID: String, completion: @escaping (UserResponse?, Error?) -> Void) {
+        _get(url: Endpoints.user(userID).url, response: UserResponse.self, stripResonse: true) { (response, error) in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
     class func logout(completion: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.session.url)
         request.httpMethod = "DELETE"
@@ -104,17 +139,21 @@ class OTMClient {
         task.resume()
     }
     
-    @discardableResult class func _get<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    @discardableResult class func _get<ResponseType: Decodable>(url: URL, response: ResponseType.Type, stripResonse: Bool = false, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
-            guard let data = data else {
+            guard var data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
                 return
             }
             
-            
             let decoder = JSONDecoder()
+            
+            if stripResonse {
+                data = stripData(data: data)
+            }
+
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: data)
                 DispatchQueue.main.async {
@@ -138,31 +177,33 @@ class OTMClient {
         return task
     }
     
-    @discardableResult class func _post<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    @discardableResult class func _post<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, stripResonse: Bool = false, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONEncoder().encode(body)
 
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else {
+            guard var data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
                 return
             }
             let decoder = JSONDecoder()
-            // Udacity put some odd characters at the beggening of the response for security reasons?
-            let range = 5..<data.count
-            let strippedData = data.subdata(in: range)
+            
+            if stripResonse {
+                data = stripData(data: data)
+            }
+            
             do {
-                let responseObject = try decoder.decode(ResponseType.self, from: strippedData)
+                let responseObject = try decoder.decode(ResponseType.self, from: data)
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
                 }
             } catch {
                 do {
-                    let errorResponse = try decoder.decode(OTMResponse.self, from: strippedData)
+                    let errorResponse = try decoder.decode(OTMResponse.self, from: data)
                     DispatchQueue.main.async {
                         completion(nil, errorResponse)
                     }
@@ -177,5 +218,11 @@ class OTMClient {
         task.resume()
         
         return task
+    }
+    
+    class func stripData(data: Data) -> Data {
+        // Udacity put some odd characters at the beggening of the response for security reasons?
+        let range = 5..<data.count
+        return data.subdata(in: range)
     }
 }
